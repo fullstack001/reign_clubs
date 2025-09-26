@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Remove output: 'export' to allow npm start
+  // output: 'export', // Uncomment this line for static export
   trailingSlash: true,
   images: {
-    unoptimized: true
-  }
-}
+    unoptimized: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

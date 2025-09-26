@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build:export": "next build && next export",
+    "build:static": "next build",
+    "serve:static": "npx serve@latest out",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
   },
