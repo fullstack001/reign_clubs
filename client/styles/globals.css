@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font family for Palatino Linotype */
+@layer base {
+  body {
+    @apply bg-[#e6ceb1] text-[#452005] font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom responsive utilities */
+@layer utilities {
+  .font-palatino {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  }
+}
