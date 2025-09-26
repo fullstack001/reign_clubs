@@ -166,15 +166,15 @@ export default function MembershipApproval(): JSX.Element {
             <Image
               src="/imgs/brand.svg"
               alt="brand"
-              width={60}
-              height={60}
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-[60px] xl:h-[60px] object-contain"
+              width={80}
+              height={80}
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-[80px] xl:h-[80px] object-contain"
             />
           </div>
-          <div className="absolute bottom-2 left-3 sm:bottom-3 sm:left-4 md:bottom-4 md:left-6 lg:bottom-4 lg:left-8 xl:bottom-4 xl:left-10 text-[#e6ceb1] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
+          <div className="absolute bottom-2 left-3 sm:bottom-3 sm:left-4 md:bottom-4 md:left-6 lg:bottom-4 lg:left-8 xl:bottom-10 xl:left-10 text-[#e6ceb1] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
             {member.name}
           </div>
-          <div className="absolute bottom-2 right-3 sm:bottom-3 sm:right-4 md:bottom-4 md:right-6 lg:bottom-4 lg:right-8 xl:bottom-4 xl:right-10 text-[#e6ceb1] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
+          <div className="absolute bottom-2 right-3 sm:bottom-3 sm:right-4 md:bottom-4 md:right-6 lg:bottom-4 lg:right-8 xl:bottom-10 xl:right-10 text-[#e6ceb1] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
             {member.num}
           </div>
         </div>
