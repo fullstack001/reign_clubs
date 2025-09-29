@@ -5,6 +5,8 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+    domains: [],
+    formats: ['image/webp', 'image/avif'],
   },
 };
 
