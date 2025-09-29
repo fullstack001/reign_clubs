@@ -161,13 +161,13 @@ export default function MembershipApproval(): JSX.Element {
         </div>
 
         {/* Approval Message */}
-        <div className="text-[#452005] text-[24px] font-serif my-8 font-normal px-4">
+        <div className="text-[#452005] text-[18px] font-serif my-6 font-normal px-4">
           Your membership has been approved!
         </div>
 
         {/* Membership Card */}
         <div
-          className="bg-[#452005] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 my-6 sm:my-8 md:my-10 lg:my-12 relative shadow-lg w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] min-h-[220px] sm:min-h-[220px] md:min-h-[220px] lg:min-h-[220px] h-[220px] flex flex-col justify-between mx-4"
+          className="bg-[#452005] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 my-4 relative shadow-lg w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] min-h-[220px] sm:min-h-[220px] md:min-h-[220px] lg:min-h-[220px] h-[220px] flex flex-col justify-between mx-4"
         >
           <div className="absolute top-5 right-5">
             <Image
@@ -182,17 +182,17 @@ export default function MembershipApproval(): JSX.Element {
               }}
             />
           </div>
-          <div className="absolute bottom-2 left-3 sm:bottom-3 sm:left-4 md:bottom-4 md:left-6 lg:bottom-4 lg:left-8 xl:bottom-10 xl:left-10 text-[#e6ceb1] text-[24px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
+          <div className="absolute bottom-6 left-6 text-[#e6ceb1] text-[16px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
             {member.name}
           </div>
-          <div className="absolute bottom-2 right-3 sm:bottom-3 sm:right-4 md:bottom-4 md:right-6 lg:bottom-4 lg:right-8 xl:bottom-10 xl:right-10 text-[#e6ceb1] text-[24px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
+          <div className="absolute bottom-6 right-6 text-[#e6ceb1] text-[16px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
             {member.num}
           </div>
         </div>
 
         {/* Membership Details */}
-        <div className="text-[#452005] text-[18px] font-serif my-8  leading-relaxed max-w-[90vw] sm:max-w-[500px] px-4">
-          Your annual member dues are ${member.price}. Your member number is{" "}
+        <div className="text-[#452005] text-[18px] font-serif my-6 leading-relaxed max-w-[90vw] sm:max-w-[500px] px-4">
+          Your annual member dues are ${member.price}. Your <br /> member number is{" "}
           {member.num}.
         </div>
 
@@ -202,12 +202,12 @@ export default function MembershipApproval(): JSX.Element {
             href={member.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#452005] text-[#e6ceb1] border-none rounded-[0.375rem] px-6 py-3 sm:px-8 sm:py-3 md:px-10 md:py-4 text-[14px] font-semibold cursor-pointer shadow-lg transition-all duration-300 font-sans hover:bg-[#3a1a04] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg max-w-[280px] sm:max-w-[320px] md:max-w-none inline-block text-center no-underline"
+            className="bg-[#452005] text-[#e6ceb1] border-none rounded-[0.375rem] px-8 py-2 text-[14px] font-semibold cursor-pointer shadow-lg transition-all duration-300 font-sans hover:bg-[#3a1a04] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg max-w-[280px] sm:max-w-[320px] md:max-w-none inline-block text-center no-underline"
           >
             Go to Payment
           </a>
         ) : (
-          <button className="bg-[#452005] text-[#e6ceb1] border-none rounded-[0.375rem] px-6 py-3 sm:px-8 sm:py-3 md:px-10 md:py-4 text-[14px] font-semibold cursor-pointer shadow-lg transition-all duration-300 font-sans hover:bg-[#3a1a04] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg max-w-[280px] sm:max-w-[320px] md:max-w-none">
+          <button className="bg-[#452005] text-[#e6ceb1] border-none rounded-[0.375rem] px-8 py-2 text-[14px] font-semibold cursor-pointer shadow-lg transition-all duration-300 font-sans hover:bg-[#3a1a04] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg max-w-[280px] sm:max-w-[320px] md:max-w-none">
             Go to Payment
           </button>
         )}
