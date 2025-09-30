@@ -166,8 +166,7 @@ export default function MembershipApproval(): JSX.Element {
         .set(wrap,{ display: "block" })
         .to(progressBar, { scaleX: 1, duration: 3 })
         .to(logo, { clipPath:"inset(0% 0% 0% 0%)", duration: 3 }, "<")
-        .to(container,{ autoAlpha: 0, duration: 0.5 })
-        .to(progressBar,{ scaleX: 0, transformOrigin: "right center", duration: 0.5},"<")
+        .to(progressBar,{ scaleX: 0, transformOrigin: "right center", duration: 0.5})
         .add("hideContent", "<")
         .to(bg, { yPercent: -101, duration: 1 },"hideContent")
         .set(wrap,{ display: "flex" })
@@ -272,7 +271,7 @@ export default function MembershipApproval(): JSX.Element {
             <div className="loader__logo-wrap">
               <div className="loader__logo-item is--base">
                 <Image
-                  src="/imgs/logo.svg"
+                  src="/imgs/brand.svg"
                   alt="REIGN NEW YORK"
                   width={178}
                   height={40}
@@ -282,7 +281,7 @@ export default function MembershipApproval(): JSX.Element {
               </div>
               <div data-load-logo className="loader__logo-item is--top">
                 <Image
-                  src="/imgs/logo.svg"
+                  src="/imgs/dragon_brand.svg"
                   alt="REIGN NEW YORK"
                   width={178}
                   height={40}
@@ -293,7 +292,7 @@ export default function MembershipApproval(): JSX.Element {
             </div>
             <div className="loader__text-wrap">
               <span data-load-text data-load-reset className="loader__text-el">Hold tight</span>
-              <span data-load-text data-load-reset className="loader__text-el">Hi there!</span>
+              <span data-load-text data-load-reset className="loader__text-el">Memebers Only</span>
             </div>
           </div>
           
