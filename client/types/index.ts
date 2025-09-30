@@ -18,3 +18,16 @@ export interface RouterQuery {
   price?: string;
   link?: string;
 }
+
+// GSAP declarations
+declare global {
+  interface Window {
+    gsap: any;
+    CustomEase: any;
+    SplitText: any;
+  }
+  
+  const gsap: any;
+  const CustomEase: any;
+  const SplitText: any;
+}
