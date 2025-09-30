@@ -46,6 +46,30 @@ export default function MembershipApproval(): JSX.Element {
     return result;
   };
 
+  // Function to format price with commas for numbers greater than 1000
+  const formatPrice = (price: string): string => {
+    const numericPrice = parseFloat(price);
+    if (numericPrice >= 1000) {
+      return numericPrice.toLocaleString();
+    }
+    return price;
+  };
+
+  // Function to convert Arabic numbers to Roman numerals
+  const arabicToRoman = (num: number): string => {
+    const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    const symbols = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+    
+    let result = '';
+    for (let i = 0; i < values.length; i++) {
+      while (num >= values[i]) {
+        result += symbols[i];
+        num -= values[i];
+      }
+    }
+    return result;
+  };
+
   // Function to parse member parameter: firstname_lastname_Roman Number
   const parseMemberParam = (
     memberString: string
@@ -73,9 +97,20 @@ export default function MembershipApproval(): JSX.Element {
       const capitalizedFirstName = capitalizeFirstLetter(firstName);
       const capitalizedLastName = capitalizeFirstLetter(lastName);
 
-      // Get the Roman number (last part) and convert to Arabic
-      const romanNumber = parts[parts.length - 1];
-      const arabicNumber = romanToArabic(romanNumber);
+      // Get the number (last part) - could be Roman or Arabic
+      const numberPart = parts[parts.length - 1];
+      
+      // Check if it's already an Arabic number
+      const isArabicNumber = !isNaN(parseInt(numberPart));
+      
+      let arabicNumber: number;
+      if (isArabicNumber) {
+        // If it's already an Arabic number, use it directly
+        arabicNumber = parseInt(numberPart);
+      } else {
+        // If it's a Roman numeral, convert to Arabic
+        arabicNumber = romanToArabic(numberPart);
+      }
 
       // Format name as "FirstName LastName"
       const fullName = `${capitalizedFirstName} ${capitalizedLastName}`;
@@ -182,18 +217,18 @@ export default function MembershipApproval(): JSX.Element {
               }}
             />
           </div>
-          <div className="absolute bottom-6 left-6 text-[#e6ceb1] text-[16px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
+          <div className="absolute bottom-6 left-6 text-[#e6ceb1] text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
             {member.name}
           </div>
-          <div className="absolute bottom-6 right-6 text-[#e6ceb1] text-[16px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
-            {member.num}
+          <div className="absolute bottom-6 right-6 text-[#e6ceb1] text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
+            {arabicToRoman(parseInt(member.num))}
           </div>
         </div>
 
         {/* Membership Details */}
         <div className="text-[#452005] text-[18px] font-serif my-6 leading-relaxed max-w-[90vw] sm:max-w-[500px] px-4">
-          Your annual member dues are ${member.price}. Your <br /> member number is{" "}
-          {member.num}.
+          Your annual member dues are ${formatPrice(member.price)}. Your <br /> member number is{" "}
+          {arabicToRoman(parseInt(member.num))}.
         </div>
 
         {/* Payment Button */}
