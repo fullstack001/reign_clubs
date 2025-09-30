@@ -10,6 +10,7 @@ export default function MembershipApproval(): JSX.Element {
   const { member: memberParam, price, link }: RouterQuery = router.query;
   const [member, setMember] = useState<Member | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [showTransition, setShowTransition] = useState<boolean>(false);
 
   // Function to convert Roman numerals to Arabic numbers
   const romanToArabic = (roman: string): number => {
@@ -130,30 +131,106 @@ export default function MembershipApproval(): JSX.Element {
 
   useEffect(() => {
     if (router.isReady) {
-      // If URL parameters are provided, use them directly
-      if (memberParam && price) {
-        const { name, num } = parseMemberParam(memberParam);
-        setMember({
-          name,
-          num,
-          price: decodeURIComponent(price),
-          link: link ? decodeURIComponent(link) : undefined,
-        });
-        setLoading(false);
-      } else {
-        // Handle case where parameters are missing
-        setLoading(false);
-      }
+      // Show loading screen for 3 seconds
+      const timer = setTimeout(() => {
+        // Start transition animation
+        setShowTransition(true);
+        
+        // After transition completes, show main content
+        const transitionTimer = setTimeout(() => {
+          // If URL parameters are provided, use them directly
+          if (memberParam && price) {
+            const { name, num } = parseMemberParam(memberParam);
+            setMember({
+              name,
+              num,
+              price: decodeURIComponent(price),
+              link: link ? decodeURIComponent(link) : undefined,
+            });
+          }
+          setLoading(false);
+        }, 1000); // Transition duration
+
+        return () => clearTimeout(transitionTimer);
+      }, 3000);
+
+      return () => clearTimeout(timer);
     }
   }, [router.isReady, memberParam, price, link]);
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#e6ceb1] flex items-center justify-center p-4 sm:p-6 md:p-8">
-        <div className="text-[#452005] text-lg sm:text-xl md:text-2xl font-serif">
-          Loading...
+      <>
+        <Head>
+          <title>Loading - REIGN NEW YORK</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/imgs/faicon.svg" type="image/svg+xml" />
+        </Head>
+        <div className="min-h-screen relative overflow-hidden">
+          {/* Loading screen with logo */}
+          <div 
+            className="min-h-screen bg-[#e6ceb1] flex items-center justify-center p-4 sm:p-6 md:p-8"
+            style={{
+              animation: 'fadeUp 3s ease-in-out'
+            }}
+          >
+            <Image
+              src="/imgs/logo.svg"
+              alt="REIGN NEW YORK"
+              width={115}
+              height={40}
+              priority
+              className="w-16 h-auto sm:w-20 sm:h-auto md:w-24 md:h-auto lg:w-28 lg:h-auto xl:w-[115px] xl:h-auto object-contain"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                animation: 'logoFadeIn 1s ease-in-out 0.5s both'
+              }}
+            />
+          </div>
+          
+          {/* White transition screen */}
+          {showTransition && (
+            <div 
+              className="absolute inset-0 bg-white z-10"
+              style={{
+                animation: 'collapseUp 1s ease-in-out'
+              }}
+            />
+          )}
+          
+          <style jsx>{`
+            @keyframes fadeUp {
+              0% {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            @keyframes logoFadeIn {
+              0% {
+                opacity: 0;
+                transform: scale(0.8);
+              }
+              100% {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+            @keyframes collapseUp {
+              0% {
+                transform: translateY(100%);
+              }
+              100% {
+                transform: translateY(0);
+              }
+            }
+          `}</style>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -176,6 +253,7 @@ export default function MembershipApproval(): JSX.Element {
           content={`Membership approved for ${member.name}`}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/imgs/faicon.svg" type="image/svg+xml" />
       </Head>
 
       <div className="min-h-screen bg-[#e6ceb1] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10 text-center">
@@ -202,7 +280,11 @@ export default function MembershipApproval(): JSX.Element {
 
         {/* Membership Card */}
         <div
-          className="bg-[#452005] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 my-4 relative shadow-lg w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] min-h-[220px] sm:min-h-[220px] md:min-h-[220px] lg:min-h-[220px] h-[220px] flex flex-col justify-between mx-4"
+          className="bg-[#452005] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 my-4 relative shadow-lg w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] flex flex-col justify-between mx-4"
+          style={{
+            aspectRatio: '1.585 / 1',
+            minHeight: 'auto'
+          }}
         >
           <div className="absolute top-5 right-5">
             <Image
