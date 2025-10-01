@@ -294,7 +294,7 @@ export default function MembershipApproval(): JSX.Element {
           left: 0;
           width: 100vw;
           height: 100vh;
-          background-color: #e6ceb1;
+          background-color: #FAEFE0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -329,16 +329,16 @@ export default function MembershipApproval(): JSX.Element {
           </div>
           <div data-load-container className="loader__container">
             <div className="loader__logo-wrap">
-              {/* <div className="loader__logo-item is--base">
+              <div className="loader__logo-item is--base">
                 <Image
-                  src="/imgs/brand.svg"
+                  src="/imgs/logo.svg"
                   alt="REIGN NEW YORK"
                   width={178}
                   height={40}
                   priority
                   className="loader__logo-img"
                 />
-              </div> */}
+              </div>
               <div data-load-logo className="loader__logo-item is--top">
                 <Image
                   src="/imgs/cream_logo.svg"
@@ -464,7 +464,7 @@ export default function MembershipApproval(): JSX.Element {
         <link rel="icon" href="/imgs/faicon.svg" type="image/svg+xml" />
       </Head>
 
-      <div className="min-h-screen bg-[#e6ceb1] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10 text-center">
+      <div className="min-h-screen bg-[#FAEFE0] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10 text-center">
         {/* Header Logo */}
         <div className="my-8 flex justify-center items-center">
           <Image
