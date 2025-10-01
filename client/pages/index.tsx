@@ -341,7 +341,7 @@ export default function MembershipApproval(): JSX.Element {
               </div> */}
               <div data-load-logo className="loader__logo-item is--top">
                 <Image
-                  src="/imgs/logo.svg"
+                  src="/imgs/cream_logo.svg"
                   alt="REIGN NEW YORK"
                   width={178}
                   height={40}
@@ -350,10 +350,10 @@ export default function MembershipApproval(): JSX.Element {
                 />
               </div>
             </div>
-            <div className="loader__text-wrap">
+            {/* <div className="loader__text-wrap">
               <span data-load-text data-load-reset className="loader__text-el">Hold tight</span>
               <span data-load-text data-load-reset className="loader__text-el">Memebers Only</span>
-            </div>
+            </div> */}
           </div>
           
           <style jsx>{`
@@ -367,7 +367,7 @@ export default function MembershipApproval(): JSX.Element {
             }
 
             .loader__bg {
-              background-color: #e6ceb1;
+              background-color: #452005;
               width: 100%;
               height: 100%;
               position: absolute;
@@ -389,7 +389,7 @@ export default function MembershipApproval(): JSX.Element {
               z-index: 1;
               transform-origin: 0%;
               transform-style: preserve-3d;
-              background-color: #452005;
+              background-color: #FAEFE0;
               width: 100%;
               height: .5em;
               position: absolute;
