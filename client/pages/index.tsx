@@ -331,7 +331,7 @@ export default function MembershipApproval(): JSX.Element {
             <div className="loader__logo-wrap">
               <div className="loader__logo-item is--base">
                 <Image
-                  src="/imgs/logo.svg"
+                  src="/imgs/gray_logo.svg"
                   alt="REIGN NEW YORK"
                   width={178}
                   height={40}
