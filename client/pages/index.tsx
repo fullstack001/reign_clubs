@@ -282,33 +282,33 @@ export default function MembershipApproval(): JSX.Element {
       
       checkGSAP();
       
-      // Fallback: Show dragon image after 4 seconds if GSAP fails
-      setTimeout(() => {
-        console.log("Fallback dragon phase triggered");
-        const dragonImage = document.createElement('div');
-        dragonImage.className = 'dragon-loader';
-        dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 178px; height: 80px; object-fit: contain;" />';
-        dragonImage.style.cssText = `
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100vh;
-          background-color: #FAEFE0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-          opacity: 1;
-        `;
-        document.body.appendChild(dragonImage);
+      // // Fallback: Show dragon image after 4 seconds if GSAP fails
+      // setTimeout(() => {
+      //   console.log("Fallback dragon phase triggered");
+      //   const dragonImage = document.createElement('div');
+      //   dragonImage.className = 'dragon-loader';
+      //   dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 178px; height: 80px; object-fit: contain;" />';
+      //   dragonImage.style.cssText = `
+      //     position: fixed;
+      //     top: 0;
+      //     left: 0;
+      //     width: 100vw;
+      //     height: 100vh;
+      //     background-color: #FAEFE0;
+      //     display: flex;
+      //     align-items: center;
+      //     justify-content: center;
+      //     z-index: 1000;
+      //     opacity: 1;
+      //   `;
+      //   document.body.appendChild(dragonImage);
         
-        setTimeout(() => {
-          if (dragonImage && dragonImage.parentNode) {
-            dragonImage.parentNode.removeChild(dragonImage);
-          }
-        }, 2000);
-      }, 4000);
+      //   setTimeout(() => {
+      //     if (dragonImage && dragonImage.parentNode) {
+      //       dragonImage.parentNode.removeChild(dragonImage);
+      //     }
+      //   }, 2000);
+      // }, 4000);
     }
   }, [router.isReady, memberParam, price, link, loading]);
 
@@ -391,7 +391,7 @@ export default function MembershipApproval(): JSX.Element {
               transform-style: preserve-3d;
               background-color: #FAEFE0;
               width: 100%;
-              height: .5em;
+              height: .2em;
               position: absolute;
               inset: auto 0% 0%;
               transform: scale3d(0, 1, 1);
@@ -412,7 +412,7 @@ export default function MembershipApproval(): JSX.Element {
             }
 
             .loader__logo-item.is--base {
-              opacity: .2;
+              opacity: .3;
             }
 
             .loader__logo-item.is--top {
