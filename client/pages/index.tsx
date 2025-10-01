@@ -367,7 +367,7 @@ export default function MembershipApproval(): JSX.Element {
             }
 
             .loader__bg {
-              background-color: #452005;
+              background-color: #40220B;
               width: 100%;
               height: 100%;
               position: absolute;
