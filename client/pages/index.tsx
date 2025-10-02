@@ -289,7 +289,7 @@ export default function MembershipApproval(): JSX.Element {
 
         {/* Membership Details */}
         <div className="text-[#452005] text-[18px] font-serif my-4 sm:my-4 md:my-6 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
-        You've been been approved! Your annual member dues are $
+        You've been been approved! <br /> Your annual member dues are $
           {member?.price ? formatPrice(member.price) : "..."}. Your member
           number is {member?.num ? arabicToRoman(parseInt(member.num)) : "..."}.
         </div>
