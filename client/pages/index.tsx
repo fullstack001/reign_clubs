@@ -283,8 +283,15 @@ export default function MembershipApproval(): JSX.Element {
         </div>
 
         {/* Approval Message */}
-        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-6 font-normal px-4 w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px]">
+        {/* <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-6 font-normal px-4 w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px]">
           Your membership has been approved!
+        </div> */}
+
+        {/* Membership Details */}
+        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-6 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
+          Your annual member dues are $
+          {member?.price ? formatPrice(member.price) : "..."}. Your member
+          number is {member?.num ? arabicToRoman(parseInt(member.num)) : "..."}.
         </div>
 
         {/* Membership Card */}
@@ -315,12 +322,7 @@ export default function MembershipApproval(): JSX.Element {
           </div>
         </div>
 
-        {/* Membership Details */}
-        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-6 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
-          Your annual member dues are $
-          {member?.price ? formatPrice(member.price) : "..."}. Your member
-          number is {member?.num ? arabicToRoman(parseInt(member.num)) : "..."}.
-        </div>
+        
 
         {/* Payment Button */}
         {member?.link ? (
