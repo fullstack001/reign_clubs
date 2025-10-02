@@ -177,45 +177,10 @@ export default function MembershipApproval(): JSX.Element {
                 baseLogoItem.remove();
                 console.log("Removing base logo item");
               } 
-            }, 500);
-           
-            
-
-
-        })
-        
-        
-        // .add("dragonPhase", "<")
-        // .call(() => {
-        //   console.log("dragonPhase");
-        //   // Show dragon brand image
-        //   const dragonImage = document.createElement('div');
-        //   dragonImage.className = 'dragon-loader';
-        //   dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 200px; height: 200px; object-fit: contain;" />';
-        //   dragonImage.style.cssText = `
-        //     position: fixed;
-        //     top: 0;
-        //     left: 0;
-        //     width: 100vw;
-        //     height: 100vh;
-        //     background-color: #e6ceb1;
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: center;
-        //     z-index: 1000;
-        //     opacity: 1;
-        //   `;
-        //   document.body.appendChild(dragonImage);
-          
-        //   // Remove dragon image after 500ms
-        //   setTimeout(() => {
-        //     if (dragonImage && dragonImage.parentNode) {
-        //       dragonImage.parentNode.removeChild(dragonImage);
-        //     }
-        //   }, 5000);
-        // }, "dragonPhase")
+            }, 500);         
+        })        
         .add("hideContent", "dragonPhase+=0.5")
-        .to(bg, { yPercent: -101, duration: 1 },"hideContent")
+        .to(bg, { yPercent: -101, duration: 0.5 },"hideContent")
         .set(wrap,{ display: "flex" })
         .call(() => {
           // If URL parameters are provided, use them directly
@@ -244,46 +209,7 @@ export default function MembershipApproval(): JSX.Element {
           loadTimeline.set(resetTargets, { autoAlpha: 1 }, 0);
         }
         
-        // If there's text items, split them, and add to load timeline
-        if (textElements.length >= 2 && window.SplitText) {
-          const firstWord = new window.SplitText(textElements[0], { type: "lines,chars", mask: "lines" });
-          const secondWord = new window.SplitText(textElements[1], { type: "lines,chars", mask: "lines" });
-          
-          // Set initial states of the text elements and letters
-          gsap.set([firstWord.chars, secondWord.chars], { autoAlpha: 0, yPercent: 125 });
-          gsap.set(textElements, { autoAlpha: 1 });
-
-          // first text in
-          loadTimeline.to(firstWord.chars, {
-            autoAlpha: 1,
-            yPercent: 0,
-            duration: 0.6,
-            stagger: { each: 0.02 }
-          }, 0);
-
-          // first text out while second text in
-          loadTimeline.to(firstWord.chars, {
-            autoAlpha: 0,
-            yPercent: -125,
-            duration: 0.4,
-            stagger: { each: 0.02 }
-          }, ">+=0.4");
-
-          loadTimeline.to(secondWord.chars, {
-            autoAlpha: 1,
-            yPercent: 0,
-            duration: 0.6,
-            stagger: { each: 0.02 }
-          }, "<");
-
-          // second text out
-          loadTimeline.to(secondWord.chars, {
-            autoAlpha: 0,
-            yPercent: -125,
-            duration: 0.4,
-            stagger: { each: 0.02 }
-          }, "hideContent-=0.5");
-        }
+       
       };
 
       // Wait for GSAP to load, then initialize
@@ -295,35 +221,8 @@ export default function MembershipApproval(): JSX.Element {
         }
       };
       
-      checkGSAP();
+      checkGSAP();     
       
-      // // Fallback: Show dragon image after 4 seconds if GSAP fails
-      // setTimeout(() => {
-      //   console.log("Fallback dragon phase triggered");
-      //   const dragonImage = document.createElement('div');
-      //   dragonImage.className = 'dragon-loader';
-      //   dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 178px; height: 80px; object-fit: contain;" />';
-      //   dragonImage.style.cssText = `
-      //     position: fixed;
-      //     top: 0;
-      //     left: 0;
-      //     width: 100vw;
-      //     height: 100vh;
-      //     background-color: #FAEFE0;
-      //     display: flex;
-      //     align-items: center;
-      //     justify-content: center;
-      //     z-index: 1000;
-      //     opacity: 1;
-      //   `;
-      //   document.body.appendChild(dragonImage);
-        
-      //   setTimeout(() => {
-      //     if (dragonImage && dragonImage.parentNode) {
-      //       dragonImage.parentNode.removeChild(dragonImage);
-      //     }
-      //   }, 1500);
-      // }, 4500);
     }
   }, [router.isReady, memberParam, price, link, loading]);
 
@@ -348,7 +247,7 @@ export default function MembershipApproval(): JSX.Element {
                 <Image
                   src="/imgs/gray_logo.svg"
                   alt="REIGN NEW YORK"
-                  width={178}
+                  width={115}
                   height={40}
                   priority
                   className="loader__logo-img"
@@ -358,17 +257,13 @@ export default function MembershipApproval(): JSX.Element {
                 <Image
                   src="/imgs/cream_logo.svg"
                   alt="REIGN NEW YORK"
-                  width={178}
+                  width={115}
                   height={40}
                   priority
                   className="loader__logo-img"
                 />
               </div>
-            </div>
-            {/* <div className="loader__text-wrap">
-              <span data-load-text data-load-reset className="loader__text-el">Hold tight</span>
-              <span data-load-text data-load-reset className="loader__text-el">Memebers Only</span>
-            </div> */}
+            </div>   
           </div>
           
           <style jsx>{`
@@ -438,28 +333,9 @@ export default function MembershipApproval(): JSX.Element {
             .loader__logo-img {
               width: 100%;
               display: block;
-            }
+            }           
 
-            .loader__text-wrap {
-              flex-flow: column;
-              justify-content: center;
-              align-items: center;
-              display: flex;
-              position: absolute;
-              bottom: 3.5em;
-            }
-
-            .loader__text-el {
-              text-transform: uppercase;
-              white-space: nowrap;
-              margin-bottom: -.25em;
-              padding-bottom: .25em;
-              font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-              position: absolute;
-              color: #452005;
-            }
-
-            [data-load-reset]{ opacity: 0; }
+            [data-load-reset]{ opacity: 0.5; }
           `}</style>
         </div>
       </>
