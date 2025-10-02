@@ -307,8 +307,8 @@ export default function MembershipApproval(): JSX.Element {
           if (dragonImage && dragonImage.parentNode) {
             dragonImage.parentNode.removeChild(dragonImage);
           }
-        }, 2000);
-      }, 5000);
+        }, 1500);
+      }, 4500);
     }
   }, [router.isReady, memberParam, price, link, loading]);
 
