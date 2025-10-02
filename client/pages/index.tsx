@@ -284,7 +284,7 @@ export default function MembershipApproval(): JSX.Element {
 
         {/* Approval Message */}
         <div className="text-[#452005] text-[18px] font-serif my-4 sm:my-4 md:my-6 font-normal px-4 w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px]">
-          Your membership has been approved!
+          You've been approved!
         </div>
 
         {/* Membership Details */}
