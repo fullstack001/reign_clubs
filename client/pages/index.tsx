@@ -283,32 +283,32 @@ export default function MembershipApproval(): JSX.Element {
       checkGSAP();
       
       // // Fallback: Show dragon image after 4 seconds if GSAP fails
-      // setTimeout(() => {
-      //   console.log("Fallback dragon phase triggered");
-      //   const dragonImage = document.createElement('div');
-      //   dragonImage.className = 'dragon-loader';
-      //   dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 178px; height: 80px; object-fit: contain;" />';
-      //   dragonImage.style.cssText = `
-      //     position: fixed;
-      //     top: 0;
-      //     left: 0;
-      //     width: 100vw;
-      //     height: 100vh;
-      //     background-color: #FAEFE0;
-      //     display: flex;
-      //     align-items: center;
-      //     justify-content: center;
-      //     z-index: 1000;
-      //     opacity: 1;
-      //   `;
-      //   document.body.appendChild(dragonImage);
+      setTimeout(() => {
+        console.log("Fallback dragon phase triggered");
+        const dragonImage = document.createElement('div');
+        dragonImage.className = 'dragon-loader';
+        dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 178px; height: 80px; object-fit: contain;" />';
+        dragonImage.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: #FAEFE0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 1000;
+          opacity: 1;
+        `;
+        document.body.appendChild(dragonImage);
         
-      //   setTimeout(() => {
-      //     if (dragonImage && dragonImage.parentNode) {
-      //       dragonImage.parentNode.removeChild(dragonImage);
-      //     }
-      //   }, 2000);
-      // }, 4000);
+        setTimeout(() => {
+          if (dragonImage && dragonImage.parentNode) {
+            dragonImage.parentNode.removeChild(dragonImage);
+          }
+        }, 2000);
+      }, 5000);
     }
   }, [router.isReady, memberParam, price, link, loading]);
 
