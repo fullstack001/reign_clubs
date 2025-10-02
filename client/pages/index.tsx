@@ -274,7 +274,7 @@ export default function MembershipApproval(): JSX.Element {
             width={115}
             height={40}
             priority
-            className="w-16 h-auto sm:w-20 sm:h-auto md:w-24 md:h-auto lg:w-28 lg:h-auto xl:w-[115px] xl:h-auto object-contain"
+            className="w-[115px] h-auto object-contain"
             style={{
               maxWidth: "100%",
               height: "auto",
