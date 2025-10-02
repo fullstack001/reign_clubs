@@ -267,7 +267,7 @@ export default function MembershipApproval(): JSX.Element {
 
       <div className="min-h-screen bg-[#FAEFE0] flex flex-col items-center sm:justify-start md:justify-center sm:p-4 md:p-8 lg:p-10 text-center">
         {/* Header Logo */}
-        <div className="mt-12 mb-4 sm:mt-12 sm:mb-6 md:mt-8 md:mb-8 flex justify-center items-center">
+        <div className="mt-12 mb-2 sm:mt-12 sm:mb-2 md:mt-8 md:mb-8 flex justify-center items-center">
           <Image
             src="/imgs/logo.svg"
             alt="REIGN NEW YORK"
@@ -283,13 +283,13 @@ export default function MembershipApproval(): JSX.Element {
         </div>
 
         {/* Approval Message */}
-        <div className="text-[#452005] text-[18px] font-serif my-6 font-normal px-4">
+        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-6 font-normal px-4">
           Your membership has been approved!
         </div>
 
         {/* Membership Card */}
         <div
-          className="bg-[#452005] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 my-4 relative shadow-lg w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] flex flex-col justify-between mx-4"
+          className="bg-[#452005] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 my-2 sm:my-2 md:my-6 relative shadow-lg w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] flex flex-col justify-between mx-4"
           style={{
             aspectRatio: "1.585 / 1",
             minHeight: "auto",
@@ -316,7 +316,7 @@ export default function MembershipApproval(): JSX.Element {
         </div>
 
         {/* Membership Details */}
-        <div className="text-[#452005] text-[18px] font-serif my-6 leading-relaxed max-w-[90vw] sm:max-w-[500px] px-4">
+        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-6 leading-relaxed max-w-[90vw] sm:max-w-[500px] px-4">
           Your annual member dues are $
           {member?.price ? formatPrice(member.price) : "..."}. Your {" "}
           member number is{" "}
