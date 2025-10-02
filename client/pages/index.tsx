@@ -265,9 +265,9 @@ export default function MembershipApproval(): JSX.Element {
         </div>
       </div>
 
-      <div className="min-h-screen bg-[#FAEFE0] flex flex-col items-center justify-start sm:p-4 md:p-8 lg:p-10 text-center">
+      <div className="min-h-screen bg-[#FAEFE0] flex flex-col items-center sm:justify-start md:justify-center sm:p-4 md:p-8 lg:p-10 text-center">
         {/* Header Logo */}
-        <div className="my-8 sm:my-4 flex justify-center items-center">
+        <div className="mt-12 mb-4 sm:mt-12 sm:mb-6 md:mt-8 md:mb-8 flex justify-center items-center">
           <Image
             src="/imgs/logo.svg"
             alt="REIGN NEW YORK"
