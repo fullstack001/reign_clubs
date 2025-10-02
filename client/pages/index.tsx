@@ -283,12 +283,12 @@ export default function MembershipApproval(): JSX.Element {
         </div>
 
         {/* Approval Message */}
-        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-6 font-normal px-4 w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px]">
+        <div className="text-[#452005] text-[18px] font-serif my-4 sm:my-4 md:my-6 font-normal px-4 w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px]">
           Your membership has been approved!
         </div>
 
         {/* Membership Details */}
-        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-6 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
+        <div className="text-[#452005] text-[18px] font-serif my-4 sm:my-4 md:my-6 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
           Your annual member dues are $
           {member?.price ? formatPrice(member.price) : "..."}. Your member
           number is {member?.num ? arabicToRoman(parseInt(member.num)) : "..."}.
@@ -296,7 +296,7 @@ export default function MembershipApproval(): JSX.Element {
 
         {/* Membership Card */}
         <div
-          className="bg-[#452005] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 my-2 sm:my-2 md:my-6 relative shadow-lg w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] flex flex-col justify-between mx-4"
+          className="bg-[#452005] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 my-4 sm:my-4 md:my-6 relative shadow-lg w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] flex flex-col justify-between mx-4"
           style={{
             aspectRatio: "1.585 / 1",
             minHeight: "auto",
