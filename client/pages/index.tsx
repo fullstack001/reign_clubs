@@ -165,40 +165,55 @@ export default function MembershipApproval(): JSX.Element {
         })
         .set(wrap,{ display: "block" })
         .call(() => console.log("Timeline started"))
-        .to(progressBar, { scaleX: 1, duration: 3 })
-        .to(logo, { clipPath:"inset(0% 0% 0% 0%)", duration: 3 }, "<")
-        .call(() => console.log("Logo animation complete"))
-        .to(progressBar,{ scaleX: 0, transformOrigin: "right center", duration: 0.5})
-        .call(() => console.log("Progress bar reverse complete"))
-        .add("dragonPhase", "<")
+        .to(progressBar, { scaleX: 1, duration: 2 })
+        .to(logo, { clipPath:"inset(0% 0% 0% 0%)", duration: 2 }, "<")
+        .call(() => console.log("Logo animation complete"))   
         .call(() => {
-          console.log("dragonPhase");
-          // Show dragon brand image
-          const dragonImage = document.createElement('div');
-          dragonImage.className = 'dragon-loader';
-          dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 200px; height: 200px; object-fit: contain;" />';
-          dragonImage.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #e6ceb1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 1;
-          `;
-          document.body.appendChild(dragonImage);
+            const baseLogoItem = document.querySelector('#loaderContainer');
+            setTimeout(() => {
+              if (baseLogoItem) {
+
+                console.log("baseLogoItem" , baseLogoItem);
+                baseLogoItem.remove();
+                console.log("Removing base logo item");
+              } 
+            }, 500);
+           
+            
+
+
+        })
+        
+        
+        // .add("dragonPhase", "<")
+        // .call(() => {
+        //   console.log("dragonPhase");
+        //   // Show dragon brand image
+        //   const dragonImage = document.createElement('div');
+        //   dragonImage.className = 'dragon-loader';
+        //   dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 200px; height: 200px; object-fit: contain;" />';
+        //   dragonImage.style.cssText = `
+        //     position: fixed;
+        //     top: 0;
+        //     left: 0;
+        //     width: 100vw;
+        //     height: 100vh;
+        //     background-color: #e6ceb1;
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        //     z-index: 1000;
+        //     opacity: 1;
+        //   `;
+        //   document.body.appendChild(dragonImage);
           
-          // Remove dragon image after 500ms
-          setTimeout(() => {
-            if (dragonImage && dragonImage.parentNode) {
-              dragonImage.parentNode.removeChild(dragonImage);
-            }
-          }, 5000);
-        }, "dragonPhase")
+        //   // Remove dragon image after 500ms
+        //   setTimeout(() => {
+        //     if (dragonImage && dragonImage.parentNode) {
+        //       dragonImage.parentNode.removeChild(dragonImage);
+        //     }
+        //   }, 5000);
+        // }, "dragonPhase")
         .add("hideContent", "dragonPhase+=0.5")
         .to(bg, { yPercent: -101, duration: 1 },"hideContent")
         .set(wrap,{ display: "flex" })
@@ -283,32 +298,32 @@ export default function MembershipApproval(): JSX.Element {
       checkGSAP();
       
       // // Fallback: Show dragon image after 4 seconds if GSAP fails
-      setTimeout(() => {
-        console.log("Fallback dragon phase triggered");
-        const dragonImage = document.createElement('div');
-        dragonImage.className = 'dragon-loader';
-        dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 178px; height: 80px; object-fit: contain;" />';
-        dragonImage.style.cssText = `
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100vh;
-          background-color: #FAEFE0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-          opacity: 1;
-        `;
-        document.body.appendChild(dragonImage);
+      // setTimeout(() => {
+      //   console.log("Fallback dragon phase triggered");
+      //   const dragonImage = document.createElement('div');
+      //   dragonImage.className = 'dragon-loader';
+      //   dragonImage.innerHTML = '<img src="/imgs/dragon_brand.svg" alt="Dragon Brand" style="width: 178px; height: 80px; object-fit: contain;" />';
+      //   dragonImage.style.cssText = `
+      //     position: fixed;
+      //     top: 0;
+      //     left: 0;
+      //     width: 100vw;
+      //     height: 100vh;
+      //     background-color: #FAEFE0;
+      //     display: flex;
+      //     align-items: center;
+      //     justify-content: center;
+      //     z-index: 1000;
+      //     opacity: 1;
+      //   `;
+      //   document.body.appendChild(dragonImage);
         
-        setTimeout(() => {
-          if (dragonImage && dragonImage.parentNode) {
-            dragonImage.parentNode.removeChild(dragonImage);
-          }
-        }, 1500);
-      }, 4500);
+      //   setTimeout(() => {
+      //     if (dragonImage && dragonImage.parentNode) {
+      //       dragonImage.parentNode.removeChild(dragonImage);
+      //     }
+      //   }, 1500);
+      // }, 4500);
     }
   }, [router.isReady, memberParam, price, link, loading]);
 
@@ -327,9 +342,9 @@ export default function MembershipApproval(): JSX.Element {
           <div data-load-bg className="loader__bg">
             <div data-load-progress className="loader__bg-bar"></div>
           </div>
-          <div data-load-container className="loader__container">
+          <div data-load-container className="loader__container" id="loaderContainer">
             <div className="loader__logo-wrap">
-              <div className="loader__logo-item is--base">
+              <div className="loader__logo-item is--base" id="baseLogo">
                 <Image
                   src="/imgs/gray_logo.svg"
                   alt="REIGN NEW YORK"
@@ -339,7 +354,7 @@ export default function MembershipApproval(): JSX.Element {
                   className="loader__logo-img"
                 />
               </div>
-              <div data-load-logo className="loader__logo-item is--top">
+              <div data-load-logo className="loader__logo-item is--top" id="topLogoItem">
                 <Image
                   src="/imgs/cream_logo.svg"
                   alt="REIGN NEW YORK"
