@@ -265,9 +265,9 @@ export default function MembershipApproval(): JSX.Element {
         </div>
       </div>
 
-      <div className="min-h-screen bg-[#FAEFE0] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10 text-center">
+      <div className="min-h-screen bg-[#FAEFE0] flex flex-col items-center justify-start sm:p-4 md:p-8 lg:p-10 text-center">
         {/* Header Logo */}
-        <div className="my-8 flex justify-center items-center">
+        <div className="my-8 sm:my-4 flex justify-center items-center">
           <Image
             src="/imgs/logo.svg"
             alt="REIGN NEW YORK"
@@ -318,7 +318,7 @@ export default function MembershipApproval(): JSX.Element {
         {/* Membership Details */}
         <div className="text-[#452005] text-[18px] font-serif my-6 leading-relaxed max-w-[90vw] sm:max-w-[500px] px-4">
           Your annual member dues are $
-          {member?.price ? formatPrice(member.price) : "..."}. Your <br />{" "}
+          {member?.price ? formatPrice(member.price) : "..."}. Your {" "}
           member number is{" "}
           {member?.num ? arabicToRoman(parseInt(member.num)) : "..."}.
         </div>
