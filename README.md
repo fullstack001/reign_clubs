@@ -115,9 +115,12 @@ The application uses a custom color scheme:
 
 ```bash
 npm run dev          # Start development server
-npm run build        # Build for production
+npm run build        # Build for production (server mode)
 npm run start        # Start production server
+npm run build:static # Build for static export
+npm run serve:static # Serve static export locally
 npm run lint         # Run ESLint
+npm run type-check   # Run TypeScript type checking
 ```
 
 ### Environment Variables
@@ -145,20 +148,53 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Option 1: Server Mode (Recommended for Vercel)
 
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically
+1. **Build and start normally:**
 
-### Other Platforms
+   ```bash
+   npm run build
+   npm run start
+   ```
 
-The application can be deployed to any platform that supports Next.js:
+2. **Deploy to Vercel:**
+   - Push your code to GitHub
+   - Connect your repository to Vercel
+   - Deploy automatically
 
-- Netlify
-- AWS Amplify
+### Option 2: Static Export (For CDN/Static Hosting)
+
+1. **Enable static export:**
+
+   - Uncomment `output: 'export'` in `next.config.js`
+   - Comment out the line again after building
+
+2. **Build static files:**
+
+   ```bash
+   npm run build:static
+   npm run serve:static
+   ```
+
+3. **Deploy static files:**
+   - Upload the `out/` folder to any static hosting service
+   - Works with: Netlify, GitHub Pages, AWS S3, etc.
+
+### Deployment Platforms
+
+**Server Mode:**
+
+- Vercel (recommended)
 - Railway
 - DigitalOcean App Platform
+- AWS Amplify
+
+**Static Export:**
+
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
+- Any CDN/Static hosting
 
 ## 📄 License
 
