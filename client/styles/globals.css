@@ -5,7 +5,7 @@
 /* Custom font family for Palatino Linotype */
 @layer base {
   body {
-    @apply bg-[#e6ceb1] text-[#452005] font-sans;
+    @apply bg-[#FAEFE0] text-[#452005] font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
