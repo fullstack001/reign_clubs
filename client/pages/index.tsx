@@ -6,7 +6,7 @@ import { Member, RouterQuery } from "../types";
 
 export default function MembershipApproval(): JSX.Element {
   const router = useRouter();
-  const { member: memberParam, price, link }: RouterQuery = router.query;
+  const { m: memberParam, p: price, l: link }: RouterQuery = router.query;
   const [member, setMember] = useState<Member | null>(null);
 
   // Function to convert Roman numerals to Arabic numbers

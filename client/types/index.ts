@@ -14,9 +14,9 @@ export interface ApiResponse<T> {
 }
 
 export interface RouterQuery {
-  member?: string;
-  price?: string;
-  link?: string;
+  m?: string;
+  p?: string;
+  l?: string;
 }
 
 // GSAP declarations
