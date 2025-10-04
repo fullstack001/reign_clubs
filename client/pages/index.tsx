@@ -302,7 +302,7 @@ export default function MembershipApproval(): JSX.Element {
             minHeight: "auto",
           }}
         >
-          <div className="absolute top-5 right-5">
+          <div className="absolute top-5 left-5">
             <Image
               src="/imgs/brand.svg"
               alt="brand"
@@ -362,12 +362,12 @@ export default function MembershipApproval(): JSX.Element {
             href={member.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#452005] text-[#e6ceb1] border-none rounded-[0.375rem] mt-6 mb-2 px-8 py-4 text-[14px] font-semibold cursor-pointer shadow-lg transition-all duration-300 font-sans hover:bg-[#3a1a04] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg max-w-[280px] sm:max-w-[320px] md:max-w-none inline-block text-center no-underline"
+            className="bg-[#452005] text-[#e6ceb1] border-none rounded-[0.375rem] mt-6 mb-6 px-8 py-4 text-[14px] font-semibold cursor-pointer shadow-lg transition-all duration-300 font-sans hover:bg-[#3a1a04] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg max-w-[280px] sm:max-w-[320px] md:max-w-none inline-block text-center no-underline"
           >
             Go to Payment
           </a>
         ) : (
-          <button className="bg-[#452005] text-[#e6ceb1] border-none rounded-[0.375rem] mt-6 mb-2 px-8 py-4 text-[14px] font-semibold cursor-pointer shadow-lg transition-all duration-300 font-sans hover:bg-[#3a1a04] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg max-w-[280px] sm:max-w-[320px] md:max-w-none">
+          <button className="bg-[#452005] text-[#e6ceb1] border-none rounded-[0.375rem] mt-6 mb-6 px-8 py-4 text-[14px] font-semibold cursor-pointer shadow-lg transition-all duration-300 font-sans hover:bg-[#3a1a04] hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:shadow-lg max-w-[280px] sm:max-w-[320px] md:max-w-none">
             Go to Payment
           </button>
         )}
