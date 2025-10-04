@@ -315,10 +315,10 @@ export default function MembershipApproval(): JSX.Element {
               }}
             />
           </div>
-          <div className="absolute bottom-8 left-8 text-[#866851] text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
+          <div className="absolute bottom-8 left-8 text-[#866851] text-[16px] sm:text-[16px] md:text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
             {member?.name || "Loading..."}
           </div>
-          <div className="absolute bottom-8 right-8 text-[#866851] text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
+          <div className="absolute bottom-8 right-8 text-[#866851] text-[16px] sm:text-[16px] md:text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
             {member?.num ? arabicToRoman(parseInt(member.num)) : "..."}
           </div>
         </div>
