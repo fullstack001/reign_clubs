@@ -302,7 +302,7 @@ export default function MembershipApproval(): JSX.Element {
             minHeight: "auto",
           }}
         >
-          <div className="absolute top-10 left-10">
+          <div className="absolute top-8 left-8">
             <Image
               src="/imgs/brand.svg"
               alt="brand"
@@ -314,10 +314,10 @@ export default function MembershipApproval(): JSX.Element {
               }}
             />
           </div>
-          <div className="absolute bottom-10 left-10 text-[#866851] text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
+          <div className="absolute bottom-8 left-8 text-[#866851] text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] truncate max-w-[60%]">
             {member?.name || "Loading..."}
           </div>
-          <div className="absolute bottom-10 right-10 text-[#866851] text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
+          <div className="absolute bottom-8 right-8 text-[#866851] text-[22px] font-['Palatino_Linotype','Book_Antiqua',Palatino,serif] uppercase truncate max-w-[35%]">
             {member?.num ? arabicToRoman(parseInt(member.num)) : "..."}
           </div>
         </div>
