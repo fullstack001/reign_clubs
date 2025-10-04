@@ -323,7 +323,7 @@ export default function MembershipApproval(): JSX.Element {
         </div>
 
         {/* Membership Details */}
-        <div className="text-[#452005] text-[18px] font-serif mt-6 mb-4 sm:mt-6 sm:mb-4 md:mt-6 md:mb-4 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
+        <div className="text-[#452005] text-[18px] font-serif mt-6 mb-2 sm:mt-6 sm:mb-2 md:mt-6 md:mb-2 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
           Membership grants you access to a dedicated two floor clubhouse open{" "}
           <b>7 days a week</b> in the Lower East Side of Manhattan. The
           clubhouse will be open from 3pm until midnight on weekdays and noon
