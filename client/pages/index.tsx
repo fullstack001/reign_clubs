@@ -309,6 +309,7 @@ export default function MembershipApproval(): JSX.Element {
               alt="brand"
               width={50}
               height={60}
+              className="w-[30px] h-[36px] sm:w-[40px] sm:h-[48px] md:w-[50px] md:h-[60px]"
               style={{
                 maxWidth: "100%",
                 height: "auto",
