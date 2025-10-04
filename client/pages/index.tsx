@@ -223,6 +223,7 @@ export default function MembershipApproval(): JSX.Element {
         <title>Reign - Literature Gallery and Club</title>
         <meta name="description" content="A place for the curious and creative." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta content="https://cdn.prod.website-files.com/68c78b1351743ff7b1eae907/68c8467d918d0a71b85fe984_Frame%204%20(1).png" property="og:image" />
         <link rel="icon" href="/imgs/faicon.svg" type="image/svg+xml" />
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
