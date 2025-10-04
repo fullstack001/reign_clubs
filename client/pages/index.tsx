@@ -220,7 +220,8 @@ export default function MembershipApproval(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Membership Approved - REIGN NEW YORK</title>
+        <title>Reign - Membership Approved</title>
+        <meta name="description" content="Welcome to Reign - an exclusive private club in Manhattan's Lower East Side. Limited to 250 members, featuring a two-floor clubhouse with concierge, library, bars, food service, lounge, courtyard, and curated member events." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/imgs/faicon.svg" type="image/svg+xml" />
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
