@@ -220,8 +220,8 @@ export default function MembershipApproval(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Reign - Literature Gallery and Club</title>
-        <meta name="description" content="A place for the curious and creative." />
+        <title>Reign - Membership Approved</title>
+        <meta name="description" content="Reign is an exclusive private club in Manhattan's Lower East Side. Limited to 250 members, featuring a two floor clubhouse with concierge, library, bars, food service, lounge, courtyard, and curated member events." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta content="https://cdn.prod.website-files.com/68c78b1351743ff7b1eae907/68c8467d918d0a71b85fe984_Frame%204%20(1).png" property="og:image" />
         <link rel="icon" href="/imgs/faicon.svg" type="image/svg+xml" />
