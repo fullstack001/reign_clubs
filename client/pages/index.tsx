@@ -350,7 +350,8 @@ export default function MembershipApproval(): JSX.Element {
         <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-2 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">          
           We look forward to having you as a member. Below you will find a link 
           directing you to payment for your member dues, which secures your 
-          membership to Reign and your member number. 
+          membership to Reign and your member number.
+          <br /> 
           The typical $1,000 initiation fee has been waived.
         </div>
 
