@@ -336,27 +336,27 @@ export default function MembershipApproval(): JSX.Element {
         {/* Membership Details */}
         <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-2 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
           The clubhouse ammenities include concierge, library, two full
-          bars,food service, a lounge, courtyard and access to frequent members
+          bars, food service, a lounge, courtyard and access to frequent members
           only curated events and off-sites.
         </div>
 
         {/* Membership Details */}
         <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-2 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
           Reign is limited to <b>250 members</b> total and made up of selected
-          founders, writers, students, artists, and policy personel.
+          founders, writers, students, artists, and policy personnel.
+        </div>
+
+        {/* Membership Details */}
+        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-2 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">          
+          We look forward to having you as a member. Below you will find a link 
+          directing you to payment for your member dues, which secures your 
+          membership to Reign and your member number. 
+          The typical $1,000 initiation fee has been waived.
         </div>
 
         {/* Membership Details */}
         <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-2 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
-          We look forward to having you as a member. Below you will find a link
-          directing you to a $500 payment for initiation which secures your
-          membership and member number.
-        </div>
-
-        {/* Membership Details */}
-        <div className="text-[#452005] text-[18px] font-serif my-2 sm:my-2 md:my-2 leading-relaxed w-[70vw] max-w-[320px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[400px] px-4">
-          Upon opening this fall, we will collect member dues which can be paid
-          quarterly or annually.
+          We'll contact you to provide the opening date in the coming weeks.
         </div>
 
         {/* Payment Button */}
